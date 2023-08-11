@@ -1,0 +1,89 @@
+"""
+FHIR Server Proof of Concept
+Author: Tim Hastings, 2023
+"""
+
+info
+results = 5
+select * from Patient
+history
+clear
+history
+select id from Patient
+select data from Patient
+select count from Patient
+select * from Patient where id = urn001
+select id from Patient where id = urn002
+select count from Patient where id = urn002
+
+select id from Patient,Observation where id = urn001
+reverse Patient
+randomise Patient
+
+select * from Patient where seq = 1 : 4
+select id from Patient where seq = 1 : 4
+select data from Patient where seq = 1 : 4
+select count from Patient where seq = 1 : 4
+select * from Patient where seq = 2 : 4
+select count from Patient where seq = 2 : 4
+select * from Patient where seq < 2
+select id from Patient where seq < 2
+select data from Patient where seq < 2
+select count from Patient where seq < 2
+select * from Patient where seq >= 1
+
+select count from Patient where identifier value = 12345
+select count from Test where identifier value = 99999
+select data from Test where identifier value = 99999
+
+select * from Observation where identifier value = 6323
+select id from Observation where identifier value = 6323
+select data from Observation where identifier value = 6323
+select count from Observation where identifier value = 6323
+select * from Observation where identifier value != 6323
+select * from Observation where identifier value > 6320
+select * from Observation where identifier value < 6324
+select * from Observation where identifier value >= 6323
+
+select * from Observation where valueQuantity value = 1.0 : 4
+select id from Observation where valueQuantity value = 1.0 : 4
+select data from Observation where valueQuantity value = 1.0 : 4
+select count from Observation where valueQuantity value = 1.0 : 4
+select * from Observation where valueQuantity value = 1.0 : 7
+
+select * from Observation where interpretation with coding code = H
+select id from Observation where interpretation with coding code = H
+select data from Observation where interpretation with coding code = H
+select count from Observation where interpretation with coding code = H
+
+select * from Observation where interpretation with coding extension = 1 : 3
+select id from Observation where interpretation with coding extension = 1 : 3
+select data from Observation where interpretation with coding extension = 1 : 3
+select count from Observation where interpretation with coding extension = 1 : 3
+
+get 0b1f742d-e8b0-457d-bd9a-6062162a0072 from Patient
+get ffff4e80-a3a5-449f-a274-6ab317f0b114 from Observation
+
+insert json {"a":3} into Patient
+get xxxx from Patient
+insert file Patient1.fhir into Patient
+insert file Patient2.fhir into Patient
+insert file Observation1.fhir into Observation
+insert file Observation2.fhir into Observation
+get xxxx from Patient
+
+clear
+create Temp
+insert json {"Name":"Tim} into Temp
+
+load 100 Patient2.fhir into Test
+
+select * from Tim
+update Tim json {"Fred": "me"} where id = 49c21e80-80a7-43ce-bfc4-454c79bd58cd      Not Supported because of spaces
+update Tim json {"Jack":"me"} where id = 49c21e80-80a7-43ce-bfc4-454c79bd58cd
+update Tim file Patient1.fhir where id = 49c21e80-80a7-43ce-bfc4-454c79bd58cd
+
+history
+
+
+
