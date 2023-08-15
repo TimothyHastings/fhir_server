@@ -16,7 +16,6 @@ HELP = \
     "help\n" + \
     "info\n" + \
     "exit\n" + \
-    "create <collection>\n" + \
     "results = n\n" + \
     "history\n" + \
     "clear\n" + \
