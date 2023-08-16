@@ -31,6 +31,16 @@ Try a join - no spaces between collections!
 Try loading 1000 Patient1.FHIR resources then insert a Patient2.FHIR resource.
 Add new PatientX.FHIR and ObservationX.FHIR with modified attributes.
 
+Simple Search example run time
+create Test
+insert file Patient1.fhir into Test
+load 10000 Patient2.fhir into Test
+selectDistinct * from Test where id = urn001
+# Check the run time
+reverse Test
+selectDistinct * from Test where id = urn001
+# Check the run time
+
 
 References
 https://www.hl7.org/fhir/index.html
