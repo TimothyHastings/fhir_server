@@ -16,10 +16,10 @@ HELP = \
     "help\n" + \
     "info\n" + \
     "exit\n" + \
+    "create <collection>\n" + \
     "results = n\n" + \
     "history\n" + \
     "clear\n" + \
-    "create <collection>\n" + \
     "reverse <collection>\n" + \
     "randomise <collection>\n" + \
     "select <qualifier> from <collection_list>\n" + \
