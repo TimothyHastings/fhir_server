@@ -5,6 +5,7 @@ Author: Tim Hastings, 2023
 import os
 from datetime import datetime
 
+from order_cmd import order_collection
 from query import *
 from collection import Collection
 from resource import Resource
@@ -116,6 +117,13 @@ def cli(schema):
                 reverse_collection(schema, command_line)
             elif command == "randomise":
                 randomise_collection(schema, command_line)
+            #
+            #   New Commands
+            #   Place functions in new file
+            #   Add import at the top of this file.
+            #
+            elif command == "order":
+                order_collection(schema, command_line)
             else:
                 print("Unknown command")
 
@@ -444,7 +452,9 @@ def insert_resource(schema, command_line):
         resource.save()
         print(resource.uuid)
     elif command_line[1] == "file" or len(command_line[1]) > 0:
-        resource.load_file(command_line[2], "")
+        if not resource.load_file(command_line[2], ""):
+            print("File not Found")
+            return None
         collection.add_resource(resource)
         resource.save()
         print(resource.uuid)
