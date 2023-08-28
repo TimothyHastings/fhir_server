@@ -1,0 +1,17 @@
+# Build a database
+insert file Patient1.fhir into Patient
+insert file Patient2.fhir into Patient
+insert file Patient3.fhir into Patient
+insert file Patient4.fhir into Patient
+insert file Patient5.fhir into Patient
+
+insert file Observation1.fhir into Observation
+insert file Observation2.fhir into Observation
+
+randomise Patient
+
+select count from Patient
+load 1000 Patient0.fhir into Patient
+select count from Patient
+select * from Patient where id = 1 : 5
+

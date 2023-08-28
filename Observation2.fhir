@@ -1,6 +1,6 @@
 {
   "resourceType" : "Observation",
-  "id" : "urn002",
+  "id" : 2,
   "text" : {
     "status" : "generated"
     },
